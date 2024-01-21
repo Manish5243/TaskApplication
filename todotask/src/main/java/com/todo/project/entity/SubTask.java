@@ -11,7 +11,7 @@ public class SubTask {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int subid;
-	private boolean completedStatus;
+	private boolean completedStatus = false;
 	private String subTaskDescription;
 	
 	
@@ -44,7 +44,6 @@ public class SubTask {
 	
 	public SubTask() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	
 	
