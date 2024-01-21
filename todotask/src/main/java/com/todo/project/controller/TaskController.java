@@ -47,13 +47,6 @@ public class TaskController {
 		return new ResponseEntity<>(status, HttpStatus.OK);
 	}
 	
-//	@PutMapping(path ="/task/{taskId}", consumes = "application/json")
-//	public ResponseEntity<String> UpdateTask(@RequestBody Task task, @PathVariable Integer taskId){
-//		String status = taskService.updateTaskById(task, taskId);
-//		return new ResponseEntity<>(status, HttpStatus.OK);
-//	}
-
-	
 	@DeleteMapping("/task/{tasId}")
 	public ResponseEntity<String> deleteTask(@PathVariable Integer tasId){
 		String status = taskService.deleteById(tasId);

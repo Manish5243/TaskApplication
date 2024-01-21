@@ -20,8 +20,7 @@ public class Task {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private String taskName;
-	private String taskDescription;
-	private boolean taskStatus;
+	private boolean taskStatus = false;
 	private Date targetDate;
 	private String userName;
 	
@@ -42,12 +41,6 @@ public class Task {
 	}
 	public void setTaskName(String taskName) {
 		this.taskName = taskName;
-	}
-	public String getTaskDescription() {
-		return taskDescription;
-	}
-	public void setTaskDescription(String taskDescription) {
-		this.taskDescription = taskDescription;
 	}
 	public boolean isTaskStatus() {
 		return taskStatus;
@@ -76,12 +69,11 @@ public class Task {
 	}
 	
 	
-	public Task(int id, String taskName, String taskDescription, boolean taskStatus, Date targetDate, String userName,
+	public Task(int id, String taskName, boolean taskStatus, Date targetDate, String userName,
 			List<SubTask> subTask) {
 		super();
 		this.id = id;
 		this.taskName = taskName;
-		this.taskDescription = taskDescription;
 		this.taskStatus = taskStatus;
 		this.targetDate = targetDate;
 		this.userName = userName;
@@ -92,13 +84,12 @@ public class Task {
 	
 	@Override
 	public String toString() {
-		return "Task [id=" + id + ", taskName=" + taskName + ", taskDescription=" + taskDescription + ", taskStatus="
+		return "Task [id=" + id + ", taskName=" + taskName + ", taskStatus="
 				+ taskStatus + ", targetDate=" + targetDate + ", userName=" + userName + ", subTask=" + subTask + "]";
 	}
 	
 	public Task() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	
 	
