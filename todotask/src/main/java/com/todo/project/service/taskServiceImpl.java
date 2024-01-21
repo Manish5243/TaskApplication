@@ -19,8 +19,10 @@ public class taskServiceImpl implements TaskService, TaskListener {
 	
 	
 	@Override
-	public String upsert(Task task) {
-		taskRepository.save(task);
+	public String upsert(List<Task> task) {
+		for(Task t : task) {
+			taskRepository.save(t);
+		}
 		return "Sucess";
 	}
 
@@ -42,7 +44,6 @@ public class taskServiceImpl implements TaskService, TaskListener {
 		return taskRepository.findAll();
 		
 	}
-
 	
 	@Override
 	public String deleteById(Integer taskId) {
@@ -53,16 +54,5 @@ public class taskServiceImpl implements TaskService, TaskListener {
 			return "No record found";
 		}
 	}
-
-
-//	@Override
-//	public String updateTaskById(Task task, Integer taskId) {
-//		if(taskRepository.existsById(taskId)) {
-//			taskRepository.save(task);
-//			return "update success";
-//		}else {
-//			return "No record found";
-//		}
-//	}
 
 }

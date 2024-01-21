@@ -6,7 +6,7 @@ import com.todo.project.entity.Task;
 
 public interface TaskService {
 	
-	public String upsert(Task task);
+	public String upsert(List<Task> task);
 	public Task getById(Integer taskId);
 	public List<Task> getAllTask();
 	public String deleteById(Integer taskId);

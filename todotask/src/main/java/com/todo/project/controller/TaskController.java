@@ -23,7 +23,7 @@ public class TaskController {
 	private TaskService taskService;
 	
 	@PostMapping("/task")
-	public ResponseEntity<String> createTask(@RequestBody Task task){
+	public ResponseEntity<String> createTask(@RequestBody List<Task> task){
 		String status = taskService.upsert(task);
 		return new ResponseEntity<>(status, HttpStatus.CREATED);
 	}
@@ -42,7 +42,7 @@ public class TaskController {
 	}
 	
 	@PutMapping("/task")
-	public ResponseEntity<String> UpdateTask(@RequestBody Task task){
+	public ResponseEntity<String> UpdateTask(@RequestBody List<Task> task){
 		String status = taskService.upsert(task);
 		return new ResponseEntity<>(status, HttpStatus.OK);
 	}
