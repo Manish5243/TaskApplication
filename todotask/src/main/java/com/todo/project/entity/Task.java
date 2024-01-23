@@ -25,7 +25,7 @@ public class Task {
 	private String userName;
 	
 	@OneToMany(targetEntity = SubTask.class, cascade = CascadeType.ALL)
-	@JoinColumn(name="taskSubTask_fk", referencedColumnName = "id")
+	@JoinColumn(name="taskfk", referencedColumnName = "id")
 	private List<SubTask> subTask;
 	
 	
