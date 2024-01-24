@@ -9,6 +9,6 @@ public interface TaskService {
 	public String upsert(List<Task> task);
 	public Task getById(Integer taskId);
 	public List<Task> getAllTask();
-	public String deleteById(Integer taskId);
+	public String deleteById(List<Integer> taskId);
 	//public String updateTaskById(Task task, Integer taskId);
 }

@@ -36,7 +36,6 @@ public class taskServiceImpl implements TaskService, TaskListener {
 			taskRepository.save(t);
 			
 			boolean allTrue;
-			
 			if(subtaskId.size()>0) {
 				allTrue = true;
 			}
@@ -87,13 +86,17 @@ public class taskServiceImpl implements TaskService, TaskListener {
 	}
 	
 	@Override
-	public String deleteById(Integer taskId) {
-		if(taskRepository.existsById(taskId)) {
-			taskRepository.deleteById(taskId);
-			return "Delete success";
-		}else {
-			return "No record found";
+	public String deleteById(List<Integer> taskId) {
+		String msg ="";
+		for(Integer eachId : taskId) {
+			if(taskRepository.existsById(eachId)) {
+				taskRepository.deleteById(eachId);
+				msg = "Delete success";
+			}else {
+				msg = "No record found";
+			}
 		}
+		return msg;
 	}
 
 }
